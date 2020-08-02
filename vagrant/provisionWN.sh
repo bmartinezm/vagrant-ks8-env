@@ -197,6 +197,8 @@ echo "$(date)"
 echo "ERROR: The worker node couldn't joint to the cluster."
 }
 
-
-
+echo ""
+echo ""
+echo "$(date)"
+echo "The Worker Node successfully created."
 

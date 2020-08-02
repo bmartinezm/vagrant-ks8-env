@@ -125,6 +125,17 @@ ssh -i ssh-key vagrant@192.168.100.12
 ssh -i ssh-key vagrant@192.168.100.1N
 ```
 
+
+### <h2>Removing the Kubernetes environment</h2>
+
+<p>The shutdown script removes the Kubernetes environment created with the startup script.</p>
+
+```
+cd vagrant-ks8-env
+./startup.sh
+```
+
+
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/downloads.html
 

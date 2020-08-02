@@ -64,7 +64,7 @@ echo ""
 echo "$(date)"
 echo "ERROR creating the environment."
 echo "Exiting"
-vagrant global-status | grep virtualbox | grep vagrant-ks8 | grep -E "mn|wn"  | awk '{print("vagrant destroy " $1)}'  | sh
+vagrant destroy -f
 exit -1
 else
 echo ""
