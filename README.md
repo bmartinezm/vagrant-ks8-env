@@ -132,7 +132,7 @@ ssh -i ssh-key vagrant@192.168.100.1N
 
 ```
 cd vagrant-ks8-env
-./startup.sh
+./shutdown.sh
 ```
 
 
