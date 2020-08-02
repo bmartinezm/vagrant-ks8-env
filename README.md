@@ -11,8 +11,14 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 * [VirtualBox][virtualbox] 4.3.10 or greater.
 * [Vagrant][vagrant] 1.6 or greater.
 
+
+### Cloning the project from Github
+```
+git clone https://github.com/bmartinezm/vagrant-ks8-env.git
+```
+
 ### Configuration
-<p>The following table lists the configurable parameters of the Vagrantfile and their default values.</p>
+<p>The following table lists the configurable parameters of the <b>[Vagrantfile](Vagranffile)</b> and their default values.</p>
 
 <table>
 <thead>
@@ -35,7 +41,7 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 </tr>
 <tr>
 <td><code>vm_size</code></td>
-<td>It is the assigned Memory and CPU per instance.Be aware that the minimum memory and CPU per instance is  4096 MB and 2 vcpus.</td>
+<td>It is the assigned Memory and CPU per instance.Be aware that the minimum memory and CPU per instance is  4096 MB and 2 vcpus</td>
 <td><code>{"cpus" => 2, "memory" => 2048}</code></td>
 </tr>
 <tr>
@@ -80,6 +86,14 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 </tbody>
 </table>
 
+
+### Startup 
+<p>A Bash script was created to startup easily the Vagrant project. Before running it, make sure that all software and hardware requirements are met.</p>
+
+```
+cd vagrant-ks8-env
+./startup.sh
+```
 
 
 [virtualbox]: https://www.virtualbox.org/
