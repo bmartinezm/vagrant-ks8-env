@@ -4,7 +4,7 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 <p>This repository provides a template Vagrantfile to create a Kubernetes cluster with a Master Node and N Worker Nodes, using the VirtualBox hypervisor on your local machine.</p>
 
 ### <h2> Setup</h2>
-<h2> ### Setup</h2>
+<h2>Setup 2</h2>
 
 ### Dependencies
 <p>Before running the startup script, it is required that you install, locally in your machine, the Vagrant, and Virtualbox software. </p>
