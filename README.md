@@ -18,7 +18,7 @@ git clone https://github.com/bmartinezm/vagrant-ks8-env.git
 ```
 
 ### Configuration
-<p>The following table lists the configurable parameters of the <b>[Vagrantfile](Vagranffile)</b> and their default values.</p>
+The following table lists the configurable parameters of the [Vagrantfile](Vagranffile) and their default values.
 
 <table>
 <thead>
