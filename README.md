@@ -4,16 +4,15 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 <p>This repository provides a template Vagrantfile to create a Kubernetes cluster with a Master Node and N Worker Nodes, using the VirtualBox hypervisor on your local machine.</p>
 
 ### <h2> Setup</h2>
-<h2>Setup 2</h2>
 
 ### Dependencies
-<p>Before running the startup script, it is required that you install, locally in your machine, the Vagrant, and Virtualbox software. </p>
+<p>Before running the startup script, it is required that you install, on your local machine, the Vagrant and Virtualbox software. </p>
 
 * [VirtualBox][virtualbox] 4.3.10 or greater.
 * [Vagrant][vagrant] 1.6 or greater.
 
-
-
+### Configuration
+<p>The following table lists the configurable parameters of the Vagrantfile and their default values.</p>
 
 <table>
 <thead>
@@ -25,84 +24,58 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 </thead>
 <tbody>
 <tr>
-<td><code>STACK_NAME</code></td>
-<td>Nombre para los stacks creados cloudformation</td>
-<td><code>ModVal-Stack</code></td>
+<td><code>centos_release</code></td>
+<td>CentOS release</td>
+<td><code>7</code></td>
 </tr>
 <tr>
-<td><code>AWS_PROFILE</code></td>
-<td>Nombre del perfil configurado en AWS credentials</td>
-<td><code>""</code></td>
+<td><code>vm_gui</code></td>
+<td>If this value is set to true, all CentOS VMs will include the GUI software</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-<td><code>AWS_REGION</code></td>
-<td>Región donde se creará el cluster EKS y sus componentes</td>
-<td><code>us-east-1</code></td>
+<td><code>vm_size</code></td>
+<td>It is the assigned Memory and CPU per instance.Be aware that the minimum memory and CPU per instance is  4096 MB and 2 vcpus.</td>
+<td><code>{"cpus" => 2, "memory" => 2048}</code></td>
 </tr>
 <tr>
-<td><code>VPC_STACK_TEMPLATE</code></td>
-<td>Template para creación de la VPC con subnets públicas</td>
-<td><code>amazon-eks-vpc-sample.yaml</code></td>
+<td><code>vm_name_mn</code></td>
+<td>The Virtual Machine name for the KS8 Master Node in Virtualbox</td>
+<td><code>centos-ks8-mnode</code></td>
 </tr>
 <tr>
-<td><code>VPC_SUBNET</code></td>
-<td>Rango CIDR para la nueva VPC.</td>
-<td><code>192.169.0.0/16</code></td>
+<td><code>vm_hostname_mn</code></td>
+<td>The server's hostname for the KS8 Master Node</td>
+<td><code>ks8-masternode</code></td>
 </tr>
 <tr>
-<td><code>VPC_SUBNET_B1</code></td>
-<td>Rango de CIDR para la subred pública 1</td>
-<td><code>192.169.64.0/18</code></td>
+<td><code>vm_name_wn</code></td>
+<td>The Virtual Machine name for the KS8 Worker Nodes in Virtualbox</td>
+<td><code>centos-ks8-wnode</code></td>
 </tr>
 <tr>
-<td><code>VPC_SUBNET_B2</code></td>
-<td>Rango de CIDR para la subred pública 2</td>
-<td><code>192.169.128.0/18</code></td>
+<td><code>vm_hostname_wn</code></td>
+<td>The servers' hostname for the KS8 Worker Node</td>
+<td><code>ks8-workernode</code></td>
 </tr>
 <tr>
-<td><code>VPC_SUBNET_B3</code></td>
-<td>Rango de CIDR para la subred pública 3</td>
-<td><code>192.169.192.0/18</code></td>
-</tr>
-<tr>
-<td><code>ARN_ROLE</code></td>
-<td>Rol requerido para la configuración del clúster EKS</td>
-<td><code>""</code></td>
-</tr>
-<tr>
-<td><code>WN_STACK_TEMPLATE</code></td>
-<td>Template para creación de Worker Nodes</td>
-<td><code>amazon-eks-nodegroup.yaml</code></td>
-</tr>
-<tr>
-<td><code>EC2_DISK_SIZE</code></td>
-<td>Tamaño de disco para instancias EC2 que componen el Work Group</td>
-<td><code>20 GB</code></td>
-</tr>
-<tr>
-<td><code>EC2_INSTANCE_TYPE</code></td>
-<td>Tipo de Instancia EC2 del Work Group</td>
-<td><code>t2.medium</code></td>
-</tr>
-<tr>
-<td><code>EC2_IMAGE_ID</code></td>
-<td>AMIID - ID de imágen Sistema operativo para Worker Nodes </td>
-<td><code>ami-0f15d55736fd476da (Amazon Linix 2)</code></td>
-</tr>
-<tr>
-<td><code>SCALING_MIN_SIZE</code></td>
-<td>Número mínimo de instancias EC2 en el Work Group</td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>SCALING_MAX_SIZE</code></td>
-<td>Número máximo de instancias EC2 en el Work Group</td>
-<td><code>4</code></td>
-</tr>
-<tr>
-<td><code>AWS_KEY_NAME</code></td>
-<td>Número deseado de instancias EC2 en el Work Group</td>
+<td><code>N</code></td>
+<td>Number of nodes worker nodes, TOTAL VMs: N+1</td>
 <td><code>2</code></td>
+</tr>
+<td><code>vagrant_assets</code></td>
+<td>It is the directory where the VMs' bootstrap scripts are stored</td>
+<td><code>./vagrant</code></td>
+</tr>
+<tr>
+<td><code>vm_net_mask</code></td>
+<td>The environment subnet mask</td>
+<td><code>"255.255.255.0"</code></td>
+</tr>
+<tr>
+<td><code>vm_net_ip</code></td>
+<td>The KS8 environment's private subnet. Virtualbox's type of network: "host-only"</td>
+<td><code>"192.168.100."</code></td>
 </tr>
 </tbody>
 </table>

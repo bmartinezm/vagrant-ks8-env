@@ -31,7 +31,7 @@ vm_name_wn = "centos-ks8-wnode"
 vm_hostname_wn = "ks8-workernode"
 
 #Number of nodes worker nodes, TOTAL VMs = N+1
-N = 3
+N = 2
 
 # Network configuration 
 vm_net_mask = "255.255.255.0"
