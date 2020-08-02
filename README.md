@@ -99,10 +99,12 @@ cd vagrant-ks8-env
 <p>The startup.sh script triggers the "vagrant up" command to pull the CentOS images (boxes), create the VMs, and download all necessary software to create a Kubernetes cluster. It also creates a ssh key pair to ssh the master and worker nodes. </p>
 
 <h3>Master Node</h3>
+
 ```
 ssh -i ssh-key vagrant@<vm_net_ip>.10
 ```
 <h3>Worker Nodes</h3>
+
 ```
 ssh -i ssh-key vagrant@<vm_net_ip>.1N
 ```
@@ -110,10 +112,13 @@ ssh -i ssh-key vagrant@<vm_net_ip>.1N
 <p>Where N is the number of worker nodes. <b>If you do not change the default network configuration, you could access the servers as follow.</b></p>
 
 <h3>Master node - Defaul net configuration</h3>
+
 ```
 ssh -i ssh-key vagrant@192.168.100.10
 ```
+
 <h3>Worker nodes - Defaul net configuration</h3>
+
 ```
 ssh -i ssh-key vagrant@192.168.100.11
 ssh -i ssh-key vagrant@192.168.100.12
