@@ -3,7 +3,7 @@ Creating a Kubernetes environment using Vagrant along with Virtualbox
 
 <p>This repository provides a template Vagrantfile to create a Kubernetes cluster with a Master Node and N Worker Nodes, using the VirtualBox hypervisor on your local machine.</p>
 
-### <h2> Setup</h2>
+### <h2>Setup</h2>
 
 ### Dependencies
 <p>Before running the startup script, it is required that you install, on your local machine, the Vagrant and Virtualbox software. </p>
@@ -95,6 +95,25 @@ cd vagrant-ks8-env
 ./startup.sh
 ```
 
+### <h2>SSH Access</h2>
+<p>The startup.sh script triggers the "vagrant up" command to pull the CentOS images (boxes), create the VMs, and download all necessary software to create a Kubernetes cluster. It also creates a ssh key pair to ssh the master and worker nodes. </p>
+
+<h3>Master Node</h3>
+ssh -i ssh-key vagrant@<vm_net_ip>.10
+
+<h3>Worker Nodes</h3>
+ssh -i ssh-key vagrant@<vm_net_ip>.1N
+
+<p>Where N is the number of worker nodes. <b>If you do not change the default network configuration, you could access the servers as follow.</b></p>
+
+<h3>Master node - Defaul net configuration</h3>
+ssh -i ssh-key vagrant@192.168.100.10
+
+<h3>Worker nodes - Defaul net configuration</h3>
+ssh -i ssh-key vagrant@192.168.100.11
+ssh -i ssh-key vagrant@192.168.100.12
+ssh -i ssh-key vagrant@192.168.100.1N
+
 
 [virtualbox]: https://www.virtualbox.org/
 [vagrant]: https://www.vagrantup.com/downloads.html
@@ -106,7 +125,7 @@ All the code in this repo is under ![picture](https://img.shields.io/badge/licen
 ```
 MIT License
 
-Copyright (c) 2019 
+Copyright (c) 2020
 Byron Martinez Martinez bdmartinezm22@gmail.com
 
 
