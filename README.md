@@ -109,7 +109,7 @@ ssh -i ssh-key vagrant@<vm_net_ip>.10
 ssh -i ssh-key vagrant@<vm_net_ip>.1N
 ```
 
-<p>Where N is the number of worker nodes. <b>If you do not change the default network configuration, you could access the servers as follows.</b></p>
+<p>Where <b>N</b> is the number of worker nodes. <b>If you do not change the default network configuration, you could access the servers as follows.</b></p>
 
 <h3>Master node - Default net configuration</h3>
 

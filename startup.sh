@@ -14,16 +14,16 @@ echo "$(date)"
 echo "An ssh-key already exists ... skipping the ssh-key creation"
 fi
 
-echo "Copying the Vagranffile to ./vagrant"
+echo "Copying the Vagrantfile to ./vagrant"
 cp Vagrantfile ./vagrant/
 
 echo "Copying the ssh-key to ./vagrant"
 cp ssh-key ./vagrant/
 
-NETWORK=$(cat /vagrant/Vagrantfile | grep "vm_net_ip[[:space:]]="  | sed 's/vm_net_ip[[:space:]]=[[:space:]]//g'  | sed 's/"//g') 
+NETWORK=$(cat Vagrantfile | grep "vm_net_ip[[:space:]]="  | sed 's/vm_net_ip[[:space:]]=[[:space:]]//g'  | sed 's/"//g') 
 START_IP="10"
 MASTER_NODE_IP=$(echo $NETWORK | sed 's/\r//g')$START_IP
-NUMBER_OF_NODES=$(cat /vagrant/Vagrantfile | grep "N[[:space:]]="  | sed 's/N[[:space:]]=[[:space:]]//g' | sed 's/"//g' | sed 's/\r//g')
+NUMBER_OF_NODES=$(cat Vagrantfile | grep "N[[:space:]]="  | sed 's/N[[:space:]]=[[:space:]]//g' | sed 's/"//g' | sed 's/\r//g')
 
 echo ""
 echo "$(date)"
